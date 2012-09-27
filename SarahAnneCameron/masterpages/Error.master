@@ -2,6 +2,5 @@
 <asp:Content ContentPlaceHolderID="cp_content" runat="server">
   <div id="content" class="frontPage">
     <umbraco:Item runat="server" field="title"/>
-    <umbraco:macro Alias="WorkGallery" runat="server"></umbraco:macro>
   </div>
 </asp:Content>
