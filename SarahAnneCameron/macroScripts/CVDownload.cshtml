@@ -1,0 +1,7 @@
+﻿@{
+    var homepage = Model.AncestorOrSelf();
+
+    var pdf = Library.MediaById(homepage.curriculumVitae);
+}
+
+<a href="@pdf.UmbracoFile">Download CV</a>

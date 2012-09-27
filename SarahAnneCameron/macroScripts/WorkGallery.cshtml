@@ -1,0 +1,18 @@
+﻿@{
+    var homepage = Model.AncestorOrSelf();
+
+    dynamic workItems = homepage.Children.Where("NodeTypeAlias == \"Work\"").First().Children;
+}
+
+@foreach (var workItem in workItems) {
+    var image = workItem.Image.mediaItem.Image.umbracoFile;
+    
+    <article class="work-item">
+        <img src="@image" alt="@workItem.Name"></img>
+        <h1>@workItem.Name</h1>
+        <h2>@workItem.employer</h2>
+        <p>
+            @workItem.description
+        </p>
+    </article>
+}
