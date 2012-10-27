@@ -1,0 +1,11 @@
+﻿@{
+    var homepage = Model.AncestorOrSelf();
+}
+
+<span class="email info"><a href="mailto:@homepage.email">@homepage.email</a></span>
+<span class="phone info"><a href="tel:@homepage.nicePhoneNumber">@homepage.phoneNumber</a></span>
+
+@if(!String.IsNullOrEmpty(homepage.linkedIn)) {
+    <span class="linkedIn info"><a href="@homepage.linkedIn">Sarah Cameron on LinkedIn</a></span>
+}
+

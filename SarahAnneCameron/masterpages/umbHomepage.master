@@ -1,7 +1,34 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/umbMaster.master" AutoEventWireup="true" %>
 <asp:Content ContentPlaceHolderID="cp_content" runat="server">
-  <div id="content" class="frontPage">
-    <umbraco:Item runat="server" field="title"/>
+  <section id="content" class="frontPage">
+    <div class="line"></div>
+    <h1 id="introHeadline"><umbraco:Item runat="server" field="title"/></h1>
     <umbraco:macro Alias="WorkGallery" runat="server"></umbraco:macro>
-  </div>
+    
+    <div class="bottom-container background-gray">
+        <div class="bottom">
+            <div class="left-column">
+                <div>
+                    <h2>About Me</h2>
+                    <umbraco:Item runat="server" field="about"/>
+                </div>
+                
+                <div class="no-bullet-points">
+                    <h2>Skills</h2>
+                    <umbraco:Item runat="server" field="skills"/>
+                </div>
+                
+            </div>
+            
+            <div class="right-column">
+                <div>
+                    <h2>Contact Me</h2>
+                    <umbraco:macro alias="ContactInfo" runat="server"/>
+                    <umbraco:Item runat="server" field="contact"/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  </section>
 </asp:Content>
